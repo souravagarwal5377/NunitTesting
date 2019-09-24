@@ -22,7 +22,7 @@ namespace GradeBook.Tests
 
             Assert.That(sut.MinGrade(), Is.EqualTo(68.8));
         }
-
+        [Test]
         public void ReturnsMaxGrade()
         {
             var sut = new Book("Sourav");
