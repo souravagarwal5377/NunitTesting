@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gradebook
 {
-    class Book
+    public class Book
     {
         string name;
         List<double> grades;
