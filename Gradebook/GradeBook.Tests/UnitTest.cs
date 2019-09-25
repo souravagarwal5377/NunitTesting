@@ -32,5 +32,29 @@ namespace GradeBook.Tests
 
             Assert.That(sut.MaxGrade(), Is.EqualTo(98.8));
         }
+
+        [Test]
+        public void ReferenceTesting()
+        {
+            var sut1 = new Book("Sourav");
+            var sut2 = new Book("Sourav");
+            var sut3 = sut1;
+
+            Assert.That(sut1, Is.Not.EqualTo(sut2));
+            Assert.That(sut1, Is.SameAs(sut3));
+        }
+
+        [Test]
+        public void ReturnsAvgGrade()
+        {
+            var sut = new Book("Sourav");
+            sut.AddGrade(1);
+            sut.AddGrade(2);
+            sut.AddGrade(2);
+
+            Assert.That(sut.AvgGrade(), Is.EqualTo(1.67).Within(10).Percent);
+        }
+
+         
     }
 }
